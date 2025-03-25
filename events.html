@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Events - Kujto Tiranën</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom CSS -->
+  <style>
+    .event-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .event-card img {
+      width: 100%;
+      height: auto;
+    }
+    .event-card .card-body {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px;
+      color: white;
+    }
+  </style>
+  <link rel="icon" type="image/x-icon" href="images/logo1.png">
+</head>
+<body class="bg-gray-50">
+  <div class="container mx-auto mt-8 p-4">
+    <!-- Search Bar -->
+    <div class="flex justify-center items-center flex-col mb-8">
+        <h1 class="text-3xl font-semibold mb-4">Search Events &#128269;</h1>
+        <div class="flex items-center space-x-2">
+          <input id="searchInput" type="text" class="px-4 py-2 rounded-md text-left w-96" placeholder="Search for events...">
+          <button id="searchButton" class="bg-purple-600 text-white px-4 py-2 rounded-md">Search</button>
+        </div>
+      </div>
+      
+    <!-- Filter and Event Cards -->
+    <div class="flex gap-8">
+      <!-- Filter Section -->
+      <div class="w-1/4 bg-white p-6 rounded-lg shadow-lg">
+        <h5 class="text-lg font-semibold mb-4">Filter</h5>
+
+        <!-- Category Filter -->
+        <h6 class="font-medium mb-2">Category</h6>
+        <div class="flex flex-col space-y-2 mb-4">
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox" id="categoryAll">
+            <span class="ml-2">All</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox" id="categoryMusic">
+            <span class="ml-2">Music</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox" id="categorySport">
+            <span class="ml-2">Sport</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox" id="categoryExhibition">
+            <span class="ml-2">Exhibition</span>
+          </label>
+        </div>
+
+        <!-- Pricing Filter -->
+        <h6 class="font-medium mb-2">Pricing</h6>
+        <div class="flex flex-col space-y-2 mb-4">
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox" id="pricingFree">
+            <span class="ml-2">Free</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox" id="pricingPaid">
+            <span class="ml-2">Paid</span>
+          </label>
+        </div>
+
+        <!-- Type Filter -->
+        <h6 class="font-medium mb-2">Type</h6>
+        <div class="flex flex-col space-y-2 mb-4">
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox" id="typeOnline">
+            <span class="ml-2">Online</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox" id="typeIndoor">
+            <span class="ml-2">Offline - Indoor</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox" id="typeOutdoor">
+            <span class="ml-2">Offline - Outdoor</span>
+          </label>
+        </div>
+
+        <!-- Language Filter -->
+        <h6 class="font-medium mb-2">Language</h6>
+        <div class="flex flex-col space-y-2 mb-4">
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox" id="languageEnglish">
+            <span class="ml-2">English</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox" id="languageGerman">
+            <span class="ml-2">German</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox" id="languageFrench">
+            <span class="ml-2">French</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input class="form-checkbox" type="checkbox" id="languageSpanish">
+            <span class="ml-2">Spanish</span>
+          </label>
+        </div>
+
+        <!-- Apply Button -->
+        <button id="applyButton" class="bg-purple-600 text-white px-4 py-2 rounded-md w-full">Apply</button>
+      </div>
+
+      <!-- Event Cards Section -->
+      <div class="w-3/4">
+        <div id="eventCards" class="grid grid-cols-2 gap-6">
+          <!-- Event Cards will be displayed here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommended Events Section -->
+    <div class="mt-12">
+      <h3 class="text-2xl font-semibold mb-6">Recommended for you</h3>
+      <div class="flex gap-6">
+        <!-- Recommended Event 1 -->
+        <div class="event-card">
+          <img src="https://images.ra.co/16ce02a36d135dd6455fb2c78eca4ca9d89cf6e8.jpg" alt="Recommended 1" class="w-full h-64 object-cover">
+          <div class="card-body">
+            <h5 class="text-lg font-semibold">Fuel Your Passion for Rock Music</h5>
+            <p class="text-sm">From $100 | Tuesday, August 18 | 06:00 PM</p>
+            <p class="text-sm">Skanderbeg Square</p>
+            <span class="bg-red-500 text-white px-2 py-1 rounded text-xs">20% OFF</span>
+          </div>
+        </div>
+
+        <!-- Recommended Event 2 -->
+        <div class="event-card">
+          <img src="https://images.ra.co/0680ea8dfd558725237a15118ca477ebd4d61dde.jpg" alt="Recommended 2" class="w-full h-64 object-cover">
+          <div class="card-body">
+            <h5 class="text-lg font-semibold">Musical Fusion Festival</h5>
+            <p class="text-sm">From $90 | Monday, June 06 | 06:00 PM</p>
+            <p class="text-sm">Skanderbeg Square</p>
+            <span class="bg-red-500 text-white px-2 py-1 rounded text-xs">20% OFF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-white rounded-lg shadow-sm m-4 dark:bg-gray-800">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="index.html" class="hover:underline">Kujto Tiranën</a> | All Rights Reserved.
+      </span>
+      <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+          <li>
+              <a href="index.html" class="hover:underline me-4 md:me-6">Home</a>
+          </li>
+          <li>
+              <a href="map.html" class="hover:underline me-4 md:me-6">Map</a>
+          </li>
+         
+          <li>
+              <a href="about.html" class="hover:underline">About Us</a>
+          </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const events = [
+      {
+        name: 'Rock Revolt: Power and Passion',
+        date: 'Saturday, February 20',
+        time: '08:00 PM',
+        location: 'Skanderbeg Square',
+        price: '$90',
+        image: 'https://img.freepik.com/free-vector/modern-music-event-poster-template_1361-1292.jpg',
+        category: 'Music',
+        type: 'Offline - Indoor',
+        language: 'English',
+        discount: '10% OFF'
+      },
+      {
+        name: 'Rock Fest Extravaganza',
+        date: 'Friday, December 17',
+        time: '08:00 PM',
+        location: 'Skanderbeg Square',
+        price: '$80',
+        image: 'https://img.freepik.com/free-vector/music-event-poster-template-with-abstract-shapes_1361-1316.jpg',
+        category: 'Music',
+        type: 'Offline - Outdoor',
+        language: 'English',
+        discount: 'New Event'
+      },
+      {
+        name: 'A Legendary Gathering of Rock Icons',
+        date: 'Tuesday, June 20',
+        time: '08:00 PM',
+        location: 'Skanderbeg Square',
+        price: 'Free Ticket',
+        image: 'https://i.pinimg.com/474x/42/f9/31/42f931bca53009c81a55b3e76347212e.jpg',
+        category: 'Music',
+        type: 'Online',
+        language: 'English',
+        discount: 'Free Ticket'
+      },
+      {
+        name: 'Classic Rock Hits',
+        date: 'Monday, June 05',
+        time: '08:00 PM',
+        location: 'Skanderbeg Square',
+        price: '$100',
+        image: 'https://img.freepik.com/free-vector/vibrant-music-event-poster-template-with-abstract-shapes_1361-2575.jpg',
+        category: 'Music',
+        type: 'Offline - Indoor',
+        language: 'English',
+        discount: ''
+      }
+    ];
+
+    // Function to generate event card
+    function generateEventCard(event) {
+      return `
+        <div class="event-card">
+          <img src="${event.image}" alt="${event.name}" class="w-full h-64 object-cover">
+          <div class="card-body">
+            <h5 class="text-lg font-semibold">${event.name}</h5>
+            <p class="text-sm">${event.price} | ${event.date} | ${event.time}</p>
+            <p class="text-sm">${event.location}</p>
+            ${event.discount ? `<span class="bg-red-500 text-white px-2 py-1 rounded text-xs">${event.discount}</span>` : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    function filterEvents() {
+    const categoryAll = document.getElementById('categoryAll').checked;
+    const categoryMusic = document.getElementById('categoryMusic').checked;
+    const categorySport = document.getElementById('categorySport').checked;
+    const categoryExhibition = document.getElementById('categoryExhibition').checked;
+    
+    const pricingFree = document.getElementById('pricingFree').checked;
+    const pricingPaid = document.getElementById('pricingPaid').checked;
+    
+    const typeOnline = document.getElementById('typeOnline').checked;
+    const typeIndoor = document.getElementById('typeIndoor').checked;
+    const typeOutdoor = document.getElementById('typeOutdoor').checked;
+    
+    const languageEnglish = document.getElementById('languageEnglish').checked;
+    const languageGerman = document.getElementById('languageGerman').checked;
+    const languageFrench = document.getElementById('languageFrench').checked;
+    const languageSpanish = document.getElementById('languageSpanish').checked;
+
+    const filteredEvents = events.filter(event => {
+      let matchesCategory = categoryAll || (categoryMusic && event.category === 'Music') || (categorySport && event.category === 'Sport') || (categoryExhibition && event.category === 'Exhibition');
+      let matchesPricing = (pricingFree && event.price === 'Free Ticket') || (pricingPaid && event.price !== 'Free Ticket');
+      let matchesType = (typeOnline && event.type === 'Online') || (typeIndoor && event.type === 'Offline - Indoor') || (typeOutdoor && event.type === 'Offline - Outdoor');
+      let matchesLanguage = (languageEnglish && event.language === 'English') || (languageGerman && event.language === 'German') || (languageFrench && event.language === 'French') || (languageSpanish && event.language === 'Spanish');
+      
+      return matchesCategory && matchesPricing && matchesType && matchesLanguage;
+    });
+    
+    displayEvents(filteredEvents);
+  }
+
+    // Event listener for search button
+    document.getElementById('searchButton').addEventListener('click', function () {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const filteredEvents = events.filter(event => event.name.toLowerCase().includes(query));
+      displayEvents(filteredEvents);
+    });
+// Event listener for apply button
+document.getElementById('applyButton').addEventListener('click', function () {
+  filterEvents();  // Call the filter function when the "Apply" button is clicked
+});
+let filterApplied = false; // Variable to track if filter is applied
+
+// Event listener for apply button
+document.getElementById('applyButton').addEventListener('click', function () {
+  if (filterApplied) {
+    // If filter is already applied, reset all checkboxes
+    document.getElementById('categoryAll').checked = false;
+    document.getElementById('categoryMusic').checked = false;
+    document.getElementById('categorySport').checked = false;
+    document.getElementById('categoryExhibition').checked = false;
+    document.getElementById('pricingFree').checked = false;
+    document.getElementById('pricingPaid').checked = false;
+    document.getElementById('typeOnline').checked = false;
+    document.getElementById('typeIndoor').checked = false;
+    document.getElementById('typeOutdoor').checked = false;
+    document.getElementById('languageEnglish').checked = false;
+    document.getElementById('languageGerman').checked = false;
+    document.getElementById('languageFrench').checked = false;
+    document.getElementById('languageSpanish').checked = false;
+
+    // Display all events again
+    displayEvents(events);
+
+    // Reset filter applied status
+    filterApplied = false;
+  } else {
+    // Apply filters when clicked for the first time
+    filterEvents();
+    filterApplied = true;
+  }
+});
+
+
+    // Function to display events
+    function displayEvents(eventsList) {
+      const eventCards = document.getElementById('eventCards');
+      eventCards.innerHTML = '';
+      eventsList.forEach(event => {
+        eventCards.innerHTML += generateEventCard(event);
+      });
+    }
+
+    // Display all events initially
+    displayEvents(events);
+  </script>
+</body>
+</html>
