@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S79Y2FRX1H"></script>
+  <script>
+    
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S79Y2FRX1H');
+  </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Tags Start ------------------------------------------------------>
+    <meta http-equiv='content-language' content='en-US'>
+    <meta name="title" content="Home - Visit Sri Lanka">
+    <meta name="description" content="Sri Lanka is an island nation located in the Indian Ocean, just off the southeastern coast of India.">
+    <meta name="keywords" content="">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://visitsrilanka.live">
+    <meta property="og:title" content="Home - Visit Sri Lanka">
+    <meta property="og:description" content="Sri Lanka is an island nation located in the Indian Ocean, just off the southeastern coast of India.">
+    <meta property="og:image" content="/images/preview.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://visitsrilanka.live">
+    <meta property="twitter:title" content="Home - Visit Sri Lanka">
+    <meta property="twitter:description" content="Sri Lanka is an island nation located in the Indian Ocean, just off the southeastern coast of India.">
+    <meta property="twitter:image" content="/images/preview.jpg">
+    <!-------------------------------------------------------- Meta Tags End -->
+    <title>Kujto Tiranën</title>
+
+    <!-- tab logo -->
+    <link rel="icon" type="image/x-icon" href="images/logo1.png">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- swiper js cdn link -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- home page event section's icon cdn link  -->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'> 
+
+    <!-- product section links -->
+    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'> -->
+
+    <!-- bootstrap file link
+    link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    
+    <!-- Home section google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    
+   
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
+.timeline {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 700px;
+  position: relative;
+}
+.timeline__content-title {
+  font-weight: normal;
+  font-size: 66px;
+  margin: -10px 0 0 0;
+  transition: 0.4s;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-family: "Pathway Gothic One", sans-serif;
+  color: #fff;
+}
+.timeline__content-desc {
+  margin: 0;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Cardo;
+  font-weight: normal;
+  line-height: 25px;
+}
+.timeline:before {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  margin-left: -1px;
+  content: "";
+  background: rgba(255, 255, 255, 0.07);
+}
+@media only screen and (max-width: 767px) {
+  .timeline:before {
+    left: 40px;
+  }
+}
+.timeline-item {
+  padding: 40px 0;
+  opacity: 0.3;
+  filter: blur(2px);
+  transition: 0.5s;
+  box-sizing: border-box;
+  width: calc(50% - 40px);
+  display: flex;
+  position: relative;
+  transform: translateY(-80px);
+}
+.timeline-item:before {
+  content: attr(data-text);
+  letter-spacing: 3px;
+  width: 100%;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  font-family: "Pathway Gothic One", sans-serif;
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  top: 70%;
+  margin-top: -5px;
+  padding-left: 15px;
+  opacity: 0;
+  right: calc(-100% - 56px);
+}
+.timeline-item:nth-child(even) {
+  align-self: flex-end;
+}
+.timeline-item:nth-child(even):before {
+  right: auto;
+  text-align: right;
+  left: calc(-100% - 56px);
+  padding-left: 0;
+  border-left: none;
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+  padding-right: 15px;
+}
+.timeline-item--active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+}
+.timeline-item--active:before {
+  top: 50%;
+  transition: 0.3s all 0.2s;
+  opacity: 1;
+}
+.timeline-item--active .timeline__content-title {
+  margin: -50px 0 20px 0;
+}
+@media only screen and (max-width: 767px) {
+  .timeline-item {
+    align-self: baseline !important;
+    width: 100%;
+    padding: 0 30px 150px 80px;
+  }
+  .timeline-item:before {
+    left: 10px !important;
+    padding: 0 !important;
+    top: 50px;
+    text-align: center !important;
+    width: 60px;
+    border: none !important;
+  }
+  .timeline-item:last-child {
+    padding-bottom: 40px;
+  }
+}
+.timeline__img {
+  max-width: 100%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+.timeline-container {
+  width: 100%;
+  position: relative;
+  padding: 80px 0;
+  transition: 0.3s ease 0s;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.timeline-container:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(99, 99, 99, 0.8);
+  content: "";
+}
+.timeline-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+.timeline-header__title {
+  color: #fff;
+  font-size: 46px;
+  font-family: Cardo;
+  font-weight: normal;
+  margin: 0;
+}
+.timeline-header__subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin: 10px 0 0 0;
+  font-weight: normal;
+}
+
+.demo-footer {
+  padding: 60px 0;
+  text-align: center;
+}
+.demo-footer a {
+  color: #999;
+  display: inline-block;
+  font-family: Cardo;
+}
+</style>
+</head>
+<body>
+    <div id="top"></div>
+<header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-hiking" style="color: rgb(56, 31, 31);"></i> kujto tiranën. </a>
+
+    <nav class="navbar">
+        <div id="nav-close" class="fas fa-times"></div>
+        <a href="../../index.html">Home</a>
+        <a href="../../index.html">Why Tirana?</a>
+        <a href="../../map.html">Map</a>
+        <a href="../../events.html">Events</a>
+        <a href="../../about.html">About Us</a>
+    </nav>
+
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <!--<a href="#" class="fas fa-shopping-cart"></a>-->
+        <div id="search-btn" class="fas fa-search"></div>
+    </div>
+    <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center  justify-center px-4 py-2 text-3xl text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+      <svg class="w-8 h-8 rounded-full me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>
+      English (US)
+    </button>
+    <!-- Dropdown -->
+    <div class="z-50 hidden my-4 text-3xl list-none bg-white divide-y rounded-lg shadow-sm" id="language-dropdown-menu">
+      <ul class="py-2 font-medium " role="none">
+        <li>
+          <a href="#" class="block px-4 py-2 text-3xl bg-white text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+            <div class="inline-flex items-center">
+              <svg aria-hidden="true" class="h-5 w-5 rounded-full me-2" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 512 512"><g fill-rule="evenodd"><g stroke-width="1pt"><path fill="#bd3d44" d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/><path fill="#fff" d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z" transform="scale(3.9385)"/></g><path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)"/><path fill="#fff" d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z" transform="scale(3.9385)"/></g></svg>              
+              English (US)
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 text-3xl text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+            <div class="inline-flex items-center">
+              <svg class="h-5 w-5.5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-de" viewBox="0 0 512 512"><path fill="#ffce00" d="M0 341.3h512V512H0z"/><path d="M0 0h512v170.7H0z"/><path fill="#d00" d="M0 170.7h512v170.6H0z"/></svg>
+              Deutsch
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 text-3xl text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+            <div class="inline-flex items-center ">
+              <svg class="h-5 w-5 rounded-full me-2 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-it" viewBox="0 0 512 512"><g fill-rule="evenodd" stroke-width="1pt"><path fill="#fff" d="M0 0h512v512H0z"/><path fill="#009246" d="M0 0h170.7v512H0z"/><path fill="#ce2b37" d="M341.3 0H512v512H341.3z"/></g></svg>              
+              Italiano
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 text-3xl text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+            <div class="inline-flex items-center">
+              <svg class="h-5 w-5 rounded-full me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn" viewBox="0 0 512 512"><defs><path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z"/></defs><path fill="#de2910" d="M0 0h512v512H0z"/><use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a"/><use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a"/><use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a"/></svg>
+              中文 (繁體)
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <button data-collapse-toggle="navbar-language" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-3xl text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-language" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+      </svg>
+  </button>
+  </header>
+
+<div class="search-form">
+
+    <div id="close-search" class="fas fa-times"></div>
+
+    <form action="">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+</div>
+
+<div class="timeline-container" id="timeline-1">
+    <div class="timeline-header">
+      <h2 class="timeline-header__title">Skanderbeg Square</h2>
+      <h3 class="timeline-header__subtitle">The Skanderbeg Square (Albanian: Sheshi Skënderbej) is the main plaza in the centre of Tirana, Albania. <br>The square is named after the Albanian national hero Gjergj Kastrioti Skënderbeu.</h3>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item" data-text="Kujto Tiranën">
+        <div class="timeline__content"><img class="timeline__img" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Tirana_Old_Postcard.jpg"/>
+          <h2 class="timeline__content-title">1923</h2>
+          <p class="timeline__content-desc">In 1923, Skanderbeg Square in Tirana was a modest open space that served as the heart of the city's social and political life. The square, named after the national hero, George Kastrioti Skanderbeg, was surrounded by simple buildings, with limited development reflecting the early stages of Albania's modernization during the interwar period.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="Kujto Tiranën">
+        <div class="timeline__content"><img class="timeline__img" src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Bundesarchiv_Bild_101I-049-1605-30A%2C_Tirana%2C_Raupenschlepper_Ost_mit_Anh%C3%A4nger.jpg"/>
+          <h2 class="timeline__content-title">1943</h2>
+          <p class="timeline__content-desc">In 1943, Skanderbeg Square in Tirana was heavily influenced by the Italian fascist occupation, with the square becoming a focal point for Italian military and political presence. The square's environment reflected the occupation, with architectural changes such as the construction of the fascist-era buildings, marking a shift from its previous Ottoman-style influence.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="Kujto Tiranën">
+        <div class="timeline__content"><img class="timeline__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Stamp_of_USSR_1592.jpg/1280px-Stamp_of_USSR_1592.jpg"/>
+          <h2 class="timeline__content-title">1951</h2>
+          <p class="timeline__content-desc">In 1951, Skanderbeg Square in Tirana was undergoing significant changes as the city began to modernize under the socialist regime. The square became a symbol of the new communist identity, with monuments and architecture reflecting the ideological shift, including the removal of some fascist-era structures.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="Kujto Tiranën">
+        <div class="timeline__content"><img class="timeline__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Sheshi_Sk%C3%ABnderbej_%28Szkander_b%C3%A9g_t%C3%A9r%29._Fortepan_28339.jpg/1280px-Sheshi_Sk%C3%ABnderbej_%28Szkander_b%C3%A9g_t%C3%A9r%29._Fortepan_28339.jpg"/>
+          <h2 class="timeline__content-title">1963</h2>
+          <p class="timeline__content-desc">In 1963, Skanderbeg Square in Tirana was a focal point of socialist architecture, with the construction of new public buildings reflecting the city’s industrial progress. The square hosted important political events, and the surrounding area became increasingly symbolic of the state's power and control over public life.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="Kujto Tiranën">
+        <div class="timeline__content"><img class="timeline__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Tirana_Square_1988.jpg/1280px-Tirana_Square_1988.jpg"/>
+          <h2 class="timeline__content-title">1988</h2>
+          <p class="timeline__content-desc">In 1988, Skanderbeg Square in Tirana remained a key location for state-sponsored celebrations, with its monumental design symbolizing the strength of the socialist regime. The square was still dominated by large public buildings, but the city was beginning to show signs of change as Albania’s isolation from the rest of the world started to weaken.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="Kujto Tiranën">
+        <div class="timeline__content"><img class="timeline__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Skanderbeg_square_under_reconstruction.jpg/1280px-Skanderbeg_square_under_reconstruction.jpg"/>
+          <h2 class="timeline__content-title">2010</h2>
+          <p class="timeline__content-desc">Former Tirana mayor Edi Rama embarked on a plan to modernize and Europeanize the square. In March 2010, works began to transform the square into a pedestrians and public transport only area. A new fountain would use rain water as its water supply, while a two-meter high pyramid would be built and leveled with a 2.5% slope throughout the square. During the construction period, detour roads have been put in place to gradually establish the new and permanent road in the ring road around the square. The entire project is funded by a grant from the State of Kuwait.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="Kujto Tiranën">
+        <div class="timeline__content"><img class="timeline__img" src="https://live.staticflickr.com/6111/6311981073_0968b09fe4_c.jpg"/>
+          <h2 class="timeline__content-title">2011</h2>
+          <p class="timeline__content-desc">The use of the square by all motor vehicles was restored through the construction of a narrower road segment around the center of the square including bicycle lanes. The existing green field south of Skanderbeg's statue was extended northward for a few hundred meters, while trees were planted in most places.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="Kujto Tiranën">
+        <div class="timeline__content"><img class="timeline__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/SkanderbegSquare_construction_Dec2016_%28WPWTR16%29.JPG/1280px-SkanderbegSquare_construction_Dec2016_%28WPWTR16%29.JPG"/>
+          <h2 class="timeline__content-title">2016</h2>
+          <p class="timeline__content-desc">
+            The next mayor, Erion Veliaj, announced that instead the 2010 plan would be reintroduced with minor changes such as greater green space areas around the square, underground parking, and the introduction of stone material taken from all corners of Albania, and Albanian inhabited lands. Albania's rich flora would be represented in the gardens around the square, while the former garden behind Skanderbeg's monument would be restored to the pre-2010 state and named Europe Park.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="Kujto Tiranën">
+        <div class="timeline__content"><img class="timeline__img" src="https://i.ytimg.com/vi/5N6At353NHM/maxresdefault.jpg"/>
+          <h2 class="timeline__content-title">2018</h2>
+]        </div>
+      </div>
+      <div class="timeline-item" data-text="Kujto Tiranën">
+        <div class="timeline__content"><img class="timeline__img" src="https://i.ytimg.com/vi/lWHMVr46emg/maxresdefault.jpg"/>
+          <h2 class="timeline__content-title">2020</h2>
+          <p class="timeline__content-desc">In 2020, Skanderbeg Square in Tirana was significantly impacted by the COVID-19 pandemic, with public gatherings and events reduced to curb the spread of the virus. Despite the challenges, the square remained an important symbol of the city, and the surrounding area saw continued development and restoration projects aimed at revitalizing the city's center.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="Kujto Tiranën">
+        <div class="timeline__content"><img class="timeline__img" src="https://i.ytimg.com/vi/hKsSUBCl_DE/maxresdefault.jpg"/>
+          <h2 class="timeline__content-title">2022</h2>
+          <p class="timeline__content-desc">
+            In 2022, Skanderbeg Square in Tirana underwent further urban development, with new public spaces and modern amenities enhancing its accessibility and aesthetic appeal. The square also hosted several cultural events and became a central point for citizens to gather, reflecting the city’s ongoing efforts to blend history with contemporary urban life.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-item" data-text="Kujto Tiranën">
+        <div class="timeline__content"><img class="timeline__img" src="https://theholisticbackpacker.com/wp-content/uploads/2022/08/MG_1858.jpg"/>
+          <h2 class="timeline__content-title">2025</h2>
+          <p class="timeline__content-desc">Even now, Skanderbeg Square stands as a dynamic heart of Tirana, blending modern energy with rich history. The square has evolved into a lively cultural epicenter, with beautifully landscaped green areas, bustling cafés, and vibrant events that captivate both locals and visitors, making it a must-see destination in the city.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+        
+
+          
+          <!-- footer section starts  -->
+          
+          
+          
+          <!-- footer section ends -->
+          
+          
+          
+          
+          <!-- ------scroller to top -->
+          
+          <a href="#top" class="to-top">
+            <i class="fas fa-chevron-up"></i>
+          </a>
+          
+          
+          
+          
+          <!-- product section links -->
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+          
+          
+          
+          <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+          
+          <!-- custom js file link  -->
+          <script src="js/script.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+          
+          
+          <!-- <div class="scroll-container">
+              <a href="#top">To Top</a>
+          </div> -->
+          <script>
+            (function($) {
+  $.fn.timeline = function() {
+    var selectors = {
+      id: $(this),
+      item: $(this).find(".timeline-item"),
+      activeClass: "timeline-item--active",
+      img: ".timeline__img"
+    };
+    selectors.item.eq(0).addClass(selectors.activeClass);
+    selectors.id.css(
+      "background-image",
+      "url(" +
+        selectors.item
+          .first()
+          .find(selectors.img)
+          .attr("src") +
+        ")"
+    );
+    var itemLength = selectors.item.length;
+    $(window).scroll(function() {
+      var max, min;
+      var pos = $(this).scrollTop();
+      selectors.item.each(function(i) {
+        min = $(this).offset().top;
+        max = $(this).height() + $(this).offset().top;
+        var that = $(this);
+        if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+          selectors.item.removeClass(selectors.activeClass);
+          selectors.id.css(
+            "background-image",
+            "url(" +
+              selectors.item
+                .last()
+                .find(selectors.img)
+                .attr("src") +
+              ")"
+          );
+          selectors.item.last().addClass(selectors.activeClass);
+        } else if (pos <= max - 40 && pos >= min) {
+          selectors.id.css(
+            "background-image",
+            "url(" +
+              $(this)
+                .find(selectors.img)
+                .attr("src") +
+              ")"
+          );
+          selectors.item.removeClass(selectors.activeClass);
+          $(this).addClass(selectors.activeClass);
+        }
+      });
+    });
+  };
+})(jQuery);
+
+$("#timeline-1").timeline();
+
+          </script>
+          </body>
+          </html>
