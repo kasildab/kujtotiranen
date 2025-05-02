@@ -13,7 +13,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-debugger;
   gtag('config', 'G-S79Y2FRX1H');
   </script>
     <meta charset="UTF-8">
@@ -218,7 +217,7 @@ const translations = {
     'map': 'Map',
     'about': 'About Us',
     'language': 'Language',
-    
+    'des': '📍 Destinations',
     // Home section
     'welcome': 'Welcome to Kujto Tiranën',
     'subtitle': 'Preserving the history and culture of Tirana',
@@ -385,6 +384,7 @@ const translations = {
     // Home section
     'welcome': 'Mirësevini në Kujto Tiranën',
     'subtitle': 'Ruajtja e historisë dhe kulturës së Tiranës',
+    'des': '📍 Destinacionet',
     
     // Map/Info section
     'map_heading': 'Njihuni më mirë me Tiranën',
@@ -440,7 +440,7 @@ const translations = {
         'teatri_title': "Teatri Kombëtar",
         'teatri_info': "Një shenjë kulturore në Tiranë, Teatri Kombëtar është shtëpi e historisë së pasur teatrale të Shqipërisë. Klikoni 'Shiko Kapsulën Kohore' për të eksploruar udhëtimin e tij përgjatë kohës!",
         'xhamia_title': "Xhamia e Ethem Beut",
-        'xhamia_info': "Kjo xhami është e vetmja ndër tetë xhamitë e shekullit XVIII-XIX të ndërtuara në Tiranë që e shohim ende sot.  Themelet e saj i vuri Molla Beu, por ai vdiq pasi kishte përfunduar kubenë dhe Faltoren e plotësoi i biri i tij, Haxhi Ethem Beu,Klikoni 'Shiko Kapsulën Kohore' për të zbuluar historinë e saj përgjatë viteve!",
+        'xhamia_info': "Kjo xhami është e vetmja ndër tetë xhamitë e shekullit XVIII-XIX të ndërtuara në Tiranë që e shohim ende sot. Themelet e saj i vuri në vitin 1794 Molla Beu, por ai vdiq pasi kishte përfunduar kubenë. Faltoren e plotësoi i biri i tij, Haxhi Et’hem Beu, në vitin 1821 duke ndërtuar minaren, çatinë, portikun, si dhe duke përfunduar zbukurimet e pikturat e brendshme. Xhamia përbëhet nga salla e lutjeve, portiku në veri dhe në lindje të saj si dhe minarja.Është ndërtuar me gurë të sjellë nga fshati Shtish – Tufinë që ndodhet në anën lindore të Tiranës. Asnjëra nga të katër fasadat e xhamisë nuk i ngjan njëra-tjetrës. Salla e lutjeve ka planimetri katrore dhe është ndërtuar me vëllim unik mbuluar me kupolë prej llamarine plumbi.",
         'stadiumi_title': "Stadiumi Air Albania",
         'stadiumi_info': "Një arenë moderne sportive në Tiranë, Stadiumi Air Albania është një qendër për ngjarje kombëtare dhe ndërkombëtare. Klikoni 'Shiko Kapsulën Kohore' për të zbuluar historinë dhe zhvillimin e tij!",
         'ambasada_title': "Ish-Ambasada Jugosllave",
@@ -613,6 +613,7 @@ function updateTexts() {
     updateElementValue('#send-btn', langData['contact_form']['send']);
     updateElementText('#k', langData['kv']);
     updateElementText('#klevi', langData['klevivokshi']);
+    updateElementText('#des', langData['des']);
 
     
     // Team Roles
@@ -924,7 +925,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     var div = L.DomUtil.create('div', 'legend');
     div.innerHTML += `
       <div class="legend-header" onclick="toggleLegend()">
-        <strong>📍 Destinacionet</strong> <span id="legend-toggle">▲</span>
+        <strong id="des">📍 Destinacionet</strong> <span id="legend-toggle">▲</span>
       </div>
       <div id="legend-body">
         <div class="legend-item"><img src="images/parku.png"> Parku / Park</div>
