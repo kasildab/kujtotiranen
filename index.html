@@ -13,7 +13,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
+debugger;
   gtag('config', 'G-S79Y2FRX1H');
   </script>
     <meta charset="UTF-8">
@@ -39,7 +39,7 @@
     <title>Kujto Tiranën</title>
 
     <!-- tab logo -->
-<link rel="icon" href="logo1.ico">
+    <link rel="icon" type="image/x-icon" href="images/logo1.png">
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -231,24 +231,6 @@ const translations = {
       'success': 'Message sent successfully!'
     },
     
-    // Roles
-    'roles': {
-      'frontend': 'Front-end Developer',
-      'backend': 'Back-end Developer',
-      'researcher': 'Research Analyst',
-      'mentor': 'Website Mentor for Project'
-    },
-    
-    // Quotes
-    'quotes': {
-      'edlin': '"As a front-end developer, I ensure the responsiveness, speed, and accessibility of websites, all while focusing on providing users with a seamless browsing experience."',
-      'kasilda': '"As a front-end developer, I focus on translating design concepts into interactive and responsive user interfaces that deliver an exceptional web experience."',
-      'kora': '"As a back-end developer, I focus on designing and maintaining robust server-side systems that handle data processing and integrate seamlessly with front-end interfaces."',
-      'kristi': '"As a back-end developer, I build and maintain databases, write server-side scripts, and design APIs that power the functionality of interactive web applications."',
-      'marsi': '"As a researcher, I am skilled in gathering and analyzing data to inform the design and development of digital products"',
-      'nati': '"As a researcher, I am skilled in gathering and analyzing data to inform the design and development of digital products"',
-      'mentor': '"As a website mentor for projects, I guide individuals or teams through the entire web development process, from planning and design to deployment, ensuring high-quality results and adherence to best practices."'
-    },
     'distance_info': 'Distance from Skanderbeg Square:',
         'time_capsule_view': 'Time Capsule View',
         'km': 'km',
@@ -367,7 +349,6 @@ const translations = {
     'map': 'Harta',
     'about': 'Rreth Nesh',
     'language': 'Gjuha',
-    
     // Home section
     'welcome': 'Mirësevini në Kujto Tiranën',
     'subtitle': 'Ruajtja e historisë dhe kulturës së Tiranës',
@@ -409,25 +390,6 @@ const translations = {
       'message': 'Mesazhi',
       'send': 'Dërgo',
       'success': 'Mesazhi u dërgua me sukses!'
-    },
-    
-    // Roles
-    'roles': {
-      'frontend': 'Zhvillues Front-end',
-      'backend': 'Zhvillues Back-end',
-      'researcher': 'Analist Kërkimesh',
-      'mentor': 'Mentor i Projektit për Faqen e Internetit'
-    },
-    
-    // Quotes
-    'quotes': {
-      'edlin': '"Si zhvillues front-end, siguroj përgjigjshmërinë, shpejtësinë dhe qasjen e faqeve të internetit, duke u fokusuar në ofrimin e një përvoje të qetë për përdoruesit."',
-      'kasilda': '"Si zhvillues front-end, fokusohem në përkthimin e koncepteve të projektimit në ndërfaqe përdoruesi interaktive dhe të përshtatshme që ofrojnë një përvojë të jashtëzakonshme në internet."',
-      'kora': '"Si zhvillues back-end, fokusohem në projektimin dhe mirëmbajtjen e sistemeve të forta në anën e serverit që përpunojnë të dhënat dhe integrohen pa probleme me ndërfaqet front-end."',
-      'kristi': '"Si zhvillues back-end, ndërtoj dhe mirëmbaj baza të dhënash, shkruaj skripta në anën e serverit dhe projektoj API që fuqizojnë funksionalitetin e aplikacioneve interaktive në internet."',
-      'marsi': '"Si kërkues, jam i aftë në mbledhjen dhe analizimin e të dhënave për të informuar projektimin dhe zhvillimin e produkteve dixhitale"',
-      'nati': '"Si kërkues, jam i aftë në mbledhjen dhe analizimin e të dhënave për të informuar projektimin dhe zhvillimin e produkteve dixhitale"',
-      'mentor': '"Si mentor i projekteve të faqeve të internetit, udhëheq individët ose ekipet përmes të gjithë procesit të zhvillimit të internetit, nga planifikimi dhe projektimi deri te vendosja, duke siguruar rezultate me cilësi të lartë dhe respektimin e praktikave më të mira."'
     },
     'distance_info': 'Distanca nga Sheshi Skënderbej:',
         'time_capsule_view': 'Shiko Kapsulën Kohore',
@@ -700,24 +662,16 @@ const imageUrls = [
 
 // Reference to the image element
 const dynamicImage = document.getElementById("dynamic-image");
-
-// Function to set a random image on page load
 function setRandomImage() {
   const randomIndex = Math.floor(Math.random() * imageUrls.length);
   dynamicImage.src = imageUrls[randomIndex];
 }
-
-// Function to change the image every 5 seconds
 function changeImage() {
   let currentImageIndex = imageUrls.indexOf(dynamicImage.src);
   currentImageIndex = (currentImageIndex + 1) % imageUrls.length; // Cycle through images
   dynamicImage.src = imageUrls[currentImageIndex];
 }
-
-// Set a random image on page load
 setRandomImage();
-
-// Change the image every 5 seconds (matching the text animation cycle)
 setInterval(changeImage, 5000);
 </script>
 
@@ -768,50 +722,48 @@ setInterval(changeImage, 5000);
 <button class="upload-btn" onclick="document.getElementById('uploadInput').click()" id="uploadImageButton">Upload Image</button>
 <input type="file" id="uploadInput" style="display: none;" accept="image/*">
 <div id="formOverlay" style="display: none;">
+
   <div id="formContainer">
+
       <form id="imageUploadForm">
+
           <label for="year">Year:</label>
+
           <input type="text" id="year" name="year" required >
+
           <br>
+
           <label for="caption">Caption:</label>
+
           <input type="text" id="caption" name="caption" required>
+
           <br>
+
           <label for="firstName">First Name:</label>
+
           <input type="text" id="firstName" name="firstName" required>
+
           <br>
+
           <label for="lastName">Last Name:</label>
+
           <input type="text" id="lastName" name="lastName" required>
+
           <br>
+
           <label for="email">Email:</label>
+
           <input type="email" id="email" name="email" required>
+
           <br>
+
           <button type="submit" >Submit</button>
+
       </form>
+
   </div>
+
 </div>
-
-
-
-<style>   
-
-
-  button[type="submit"] {
-    background-color: red; /* Ngjyrë e kuqe */
-    color: white; /* Ngjyrë e bardhë për tekstin */
-    border: none; /* Pa kufi */
-    padding: 10px 20px; /* Hapësirë rreth tekstit */
-    font-size: 16px; /* Madhësia e tekstit */
-    cursor: pointer; /* Shfaq dorën kur kalon mbi butonin */
-    border-radius: 5px; /* Rrugëzimi i këndeve */
-    transition: background-color 0.3s ease; /* Efekt kalimi */
-}
-
-/* Ndrysho ngjyrën kur kalon mbi butonin */
-button[type="submit"]:hover {
-    background-color: darkred; /* Ngjyrë më e errët kur kalon mbi butonin */
-}
-
-</style>
 </div>
 </div>
 <section class="mapi" id="hart">
@@ -830,7 +782,7 @@ button[type="submit"]:hover {
 <div class="banner-area"></div>
 
 <div class="content-area" id="aboutus">
-    <!-- First Section -->
+    <!-- I pari Section -->
     <section class="container py-5">
         <div class="row g-4">
             <div class="col-12 col-md-6">
@@ -880,14 +832,10 @@ button[type="submit"]:hover {
           </div>
       </div>
   </div>
-   
 </div>
-
-
-
 <script>
 document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();
     document.getElementById("successMessage").textContent = translations[currentLanguage]['contact_form']['success'];
     document.getElementById("successMessage").style.display = "block";
     setTimeout(function() {
@@ -902,7 +850,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     <i class="fas fa-chevron-up"></i>
 </a>
 
-<!-- custom js file link  -->
+<!-- js file link  -->
 <script src="js/allscript.js"></script>
 <script src="js/searchBar.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
@@ -912,17 +860,14 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     // Language data
-
-
-    // Current language (default to English)
-    let markers = []; // Store all markers
+    let markers = [];
     let currentHighlightedMarker = null;
     let currentHighlightedPolyline = null;
     var skenderbejLat = 41.3275;
     var skenderbejLng = 19.8189;
     let currentLocation = null;
 
-    // Initialize map
+    // Inicializoni hartën
     var map = L.map('map').setView([41.3355599, 19.8430004], 12);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
@@ -972,8 +917,6 @@ legend.onAdd = function (map) {
 };
 
 legend.addTo(map);
-
-    // Locations data
     var locations = [
       {
         lat:41.31148895,
@@ -1043,7 +986,7 @@ legend.addTo(map);
       }, {
         lat: 41.307399,
         lng: 19.809400,
-        image:"images/zologjik0.jpg",
+        image:"Html/Destinations/Kopshti_Zologjik/zologjik0.jpg",
         key: 'zoo',
         timelineImages: [
           { src: 'fotot/zoo/2009.jpeg', title: 'Zoo 2019'},
@@ -1066,7 +1009,7 @@ legend.addTo(map);
       {
         lat: 41.3265284,
         lng: 19.822484,
-        image:'images/kalaja0.jpg',
+        image:'Html/Destinations/Kalaja_Tiranes/kalaja0.jpg',
         key: 'kalaja',
         timelineImages: [
           { src: 'fotot/kalaja_e_tiranes/1798.png', title: 'Kalaja 1798'},
@@ -1893,13 +1836,11 @@ legend.addTo(map);
 
     ];
 
-    // Function to show destination info in sidebar
+    // Funksion për të shfaqur informacionin e destinacionit në shiritin anësor
     function showDestinationInfo(location) {
       currentLocation = location;
       const sidebar = document.getElementById('sidebar');
       const sidebarContent = document.getElementById('sidebar-content');
-      
-      // Remove any existing highlight
       if (currentHighlightedMarker) {
         currentHighlightedMarker.setZIndexOffset(0);
         currentHighlightedMarker = null;
@@ -1908,22 +1849,17 @@ legend.addTo(map);
         map.removeLayer(currentHighlightedPolyline);
         currentHighlightedPolyline = null;
       }
-      
-      // Find and highlight the clicked marker
       const marker = markers.find(m => 
         m.getLatLng().lat === location.lat && 
         m.getLatLng().lng === location.lng
       );
-      
       if (marker) {
-        marker.setZIndexOffset(1000); // Bring to front
+        marker.setZIndexOffset(1000);
         currentHighlightedMarker = marker;
       }
       
-      // Show distance line
+      // Shfaq distance line
       currentHighlightedPolyline = showDistanceLine(location.lat, location.lng);
-      
-      // Populate sidebar content
       sidebarContent.innerHTML = `
         <div class="sidebar-header">
           <h2 class="sidebar-title">${translations[currentLanguage][location.key + '_title']}</h2>
@@ -1941,28 +1877,18 @@ legend.addTo(map);
           <strong>${translations[currentLanguage]['distance_info']}</strong> ${calculateDistanceToSkenderbej(location.lat, location.lng).toFixed(2)} ${translations[currentLanguage]['km']}
         </div>
       `;
-      
-      // Show the sidebar
       sidebar.style.display = 'block';
     }
-
-
-    // Function to hide timeline
     function hideTimeline() {
       document.getElementById('timelineContainer').style.display = 'none';
     }
-
-    // Function to show distance line on map
+    // Funksion për të treguar vijën e distancës në hartë
     function showDistanceLine(lat, lng) {
       var destination = L.latLng(lat, lng);
       var skenderbej = L.latLng(skenderbejLat, skenderbejLng);
-      
-      // Remove any existing polyline
       if (currentHighlightedPolyline) {
         map.removeLayer(currentHighlightedPolyline);
       }
-      
-      // Create and add new polyline
       const polyline = L.polyline([skenderbej, destination], {
         color: 'red',
         weight: 3,
@@ -1972,37 +1898,27 @@ legend.addTo(map);
       
       return polyline;
     }
-
-    // Function to hide sidebar and remove highlights
     function hideSidebar() {
       const sidebar = document.getElementById('sidebar');
       sidebar.style.display = 'none';
-      
-      // Remove marker highlight
       if (currentHighlightedMarker) {
         currentHighlightedMarker.setZIndexOffset(0);
         currentHighlightedMarker = null;
       }
-      
-      // Remove polyline
       if (currentHighlightedPolyline) {
         map.removeLayer(currentHighlightedPolyline);
         currentHighlightedPolyline = null;
       }
     }
 
-    // Helper function to calculate distance to Skenderbej Square
+    // Funksion ndihmës për të llogaritur distancën deri në sheshin Skenderbej
     function calculateDistanceToSkenderbej(lat, lng) {
       var destination = L.latLng(lat, lng);
       var skenderbej = L.latLng(skenderbejLat, skenderbejLng);
-      return skenderbej.distanceTo(destination) / 1000; // Distance in km
+      return skenderbej.distanceTo(destination) / 1000; // Distanca në km
     }
-
-// Function to add markers to the map (with custom pins)
 function addMarkers() {
-    markers = []; // Clear existing markers
-    
-    // Custom pin icon creator
+    markers = [];
     const createCustomIcon = (symbol, isImage = false) => {
     return L.divIcon({
         className: 'custom-icon',
@@ -2016,8 +1932,6 @@ function addMarkers() {
         iconAnchor: [20, 40]
     });
 };
-
-    // Define symbols for different location types
     const locationSymbols = {
         'parku': 'images/parku.png',
         'piramida': 'images/pyramid.png',
@@ -2075,8 +1989,8 @@ function addMarkers() {
     };
     
     locations.forEach(function(location) {
-    const symbol = locationSymbols[location.key] || '📍'; // Default symbol if not found
-    const isImage = typeof symbol === 'string' && symbol.endsWith('.png'); // Simple check for image
+    const symbol = locationSymbols[location.key] || '📍';
+    const isImage = typeof symbol === 'string' && symbol.endsWith('.png');
     
     var marker = L.marker([location.lat, location.lng], {
         icon: createCustomIcon(symbol, isImage)
@@ -2090,14 +2004,12 @@ function addMarkers() {
 });
 }
 
-    // Function to change language
+    // Funksioni për të ndryshuar gjuhën
     function changeLanguage(lang) {
       currentLanguage = lang;
       updateTexts();
       localStorage.setItem('languagePreference', lang);
       document.querySelector('[data-dropdown-toggle="language-dropdown-menu"]').textContent = translations[lang]['language'];
-      
-      // Update sidebar content if visible
       const sidebar = document.getElementById('sidebar');
       if (sidebar.style.display === 'block') {
         const activeMarker = markers.find(m => m === currentHighlightedMarker);
@@ -2112,19 +2024,17 @@ function addMarkers() {
         }
       }
     }
-
-    // Initialize the page
     document.addEventListener('DOMContentLoaded', function() {
       addMarkers();
     const savedLang = localStorage.getItem('languagePreference');
     if (savedLang) {
         changeLanguage(savedLang);
     } else {
-        changeLanguage('en'); // Default to English
+        changeLanguage('en'); // Default në English
     }
 });
 
-// Function to show polaroid gallery
+// Funksion për t'i bërë show polaroid gallery
 async function showPolaroidGallery(location) {
     if (!location || !location.timelineImages) return;
     
@@ -2141,7 +2051,7 @@ async function showPolaroidGallery(location) {
     const polaroidContent = document.getElementById('polaroidContent');
     polaroidContent.innerHTML = '';
     
-    // Sort images by year (newest first)
+    // Rendit imazhet sipas vitit (më të rejat fillimisht)
     const sortedImages = [...location.timelineImages].sort((a, b) => {
         const yearA = parseInt(a.title.split(' ').pop()) || 0;
         const yearB = parseInt(b.title.split(' ').pop()) || 0;
@@ -2149,7 +2059,6 @@ async function showPolaroidGallery(location) {
     });
     
     sortedImages.forEach((image, index) => {
-        // Calculate position based on index
         const topPos = 20 + (20 * index);
         const leftPos = 10 + (5 * index);
         const rotations = [-5, 3, -2, 4, -1];
@@ -2164,38 +2073,26 @@ async function showPolaroidGallery(location) {
                 <h1 class="year">${image.title.split(' ').pop()}</h1>
                 <img src="${image.src}" alt="${image.title}" />
                 <div class="img" style="background-image: url(${image.src})"></div>
-               <figcaption style="">
-    <h2>${image.title}</h2>
-</figcaption>
-
+                <figcaption style="">
+                    <h2>${image.title}</h2>
+                </figcaption>
             </figure>
         `;
-        
     });
     
     document.getElementById('polaroidGallery').style.display = 'flex';
     startPolaroidCarousel();
 }
-
-// Function to hide polaroid gallery
 function hidePolaroidGallery() {
     document.getElementById('polaroidGallery').style.display = 'none';
     clearInterval(window.polaroidInterval);
 }
-
-// Function to start the polaroid carousel
- 
 function startPolaroidCarousel() {
-    // Store the original positions of all figures
     const originalPositions = [];
     document.querySelectorAll('.polaroid-figure').forEach((figure, index) => {
-        originalPositions.push(index);  // Store the original index of each figure
+        originalPositions.push(index);
     });
-
-    // Variable to store the interval and the last position
     let lastPosition = 0;
-
-    // Start the carousel interval
     window.polaroidInterval = setInterval(function() { 
         var nxt = $('.polaroid-figure.current')
             .removeClass("current")
@@ -2209,40 +2106,30 @@ function startPolaroidCarousel() {
 
         nxt.addClass("current")
             .removeClass("next");
-
-        // Log the original index of the current figure
         let currentOriginalPosition = originalPositions[Array.from(document.querySelectorAll('.polaroid-figure')).indexOf(document.querySelector('.polaroid-figure.current'))];
         console.log("Current Original Position:", currentOriginalPosition);
-
-        // Update last position
         lastPosition = currentOriginalPosition;
 
     }, 2000);
 
-    // Add click event listener to stop the carousel when an image is clicked
+    // Shtimi i click event listener për t'i bërë stop  carousel kur imazhi klikohet
     document.querySelectorAll('.polaroid-figure').forEach((figure, index) => {
         figure.addEventListener('click', function() {
-            clearInterval(window.polaroidInterval); // Stop the carousel when an image is clicked
-
-            // Log that the carousel has been stopped
+            clearInterval(window.polaroidInterval); // Stop carousel kur imazhi klikohet
             console.log("Carousel stopped by clicking an image");
+            if (figure.querySelector('.zoom-controls')) return; // Nëse kontrollet ekzistojnë tashmë, mos bëni asgjë
 
-            // Check if zoom controls already exist
-            if (figure.querySelector('.zoom-controls')) return; // If controls already exist, do nothing
-
-            // Create zoom controls (Zoom-in, Zoom-out, Reset)
+            // Krijimi i zoom controls (Zoom-in, Zoom-out, Reset)
             let zoomContainer = document.createElement('div');
             zoomContainer.classList.add('zoom-controls');
 
-            // Create Zoom-in button
+            // Krijimi i Zoom-in button
             let zoomInBtn = document.createElement('button');
             zoomInBtn.innerText = '+';
             zoomInBtn.addEventListener('click', (event) => {
-                event.stopPropagation(); // Prevent event from bubbling
+                event.stopPropagation(); 
                 let img = figure.querySelector('.img');
-                if (!img) return;  // If no img found, stop
-
-                // Zoom in functionality
+                if (!img) return;  // Nqs asnjë img nuk gjendet, stop
                 let zoom = parseFloat(img.getAttribute('data-zoom')) || 1;
                 zoom += 0.1;
                 img.setAttribute('data-zoom', zoom.toFixed(2));
@@ -2257,9 +2144,9 @@ function startPolaroidCarousel() {
                 let img = figure.querySelector('.img');
                 if (!img) return;  // If no img found, stop
 
-                // Zoom out functionality
+                // Zoom out
                 let zoom = parseFloat(img.getAttribute('data-zoom')) || 1;
-                if (zoom > 0.5) { // Prevent zoom out too much
+                if (zoom > 0.5) {
                     zoom -= 0.1;
                     img.setAttribute('data-zoom', zoom.toFixed(2));
                     img.style.transform = `scale(${zoom})`;
@@ -2328,10 +2215,6 @@ resetBtn.addEventListener('click', (event) => {
         lastPosition = currentOriginalPosition;
     }, 2000); // Rifillon intervalin dhe lëviz të gjitha imazhet
 });
-
-
-
-            // Add CSS styles for the buttons to make them bigger
             zoomInBtn.style.fontSize = '20px';
             zoomOutBtn.style.fontSize = '20px';
             resetBtn.style.fontSize = '20px';
@@ -2345,49 +2228,40 @@ resetBtn.addEventListener('click', (event) => {
             zoomOutBtn.style.cursor = 'pointer';
             resetBtn.style.cursor = 'pointer';
 
-            // Append the buttons to the zoom container
+            // Shtojini butonat në container e zmadhimit
             zoomContainer.appendChild(zoomInBtn);
             zoomContainer.appendChild(zoomOutBtn);
             zoomContainer.appendChild(resetBtn);
 
-            // Append the zoom controls to the figure
+            // Shtojini kontrollet e zmadhimit figurës
             figure.appendChild(zoomContainer);
         });
     });
 }
 
-// Stop carousel when Upload Image button is clicked
+
+// Ndalo carousel kur Upload Image button klikohet
 document.querySelector('#uploadImageButton').addEventListener('click', function () {
-    clearInterval(window.polaroidInterval); // Stop the carousel
-    console.log("Carousel stopped by clicking Upload Image button");
+clearInterval(window.polaroidInterval);
+console.log("Carousel stopped by clicking Upload Image button");
 });
-
-
-
 function sortPhotosByYear() {
     const container = $('#polaroidContent');
     const figures = $('.polaroid-figure').get();
-    
-    // Sort figures by year in ascending order (oldest to newest)
     figures.sort((a, b) => {
         const yearA = parseInt($(a).find('.year').text()) || 0;
         const yearB = parseInt($(b).find('.year').text()) || 0;
-        return yearA - yearB; // Changed to ascending order
+        return yearA - yearB;
     });
-
-    // Clear container and re-append sorted figures
     container.empty();
     
-    // Add figures back with proper positioning
+    // Shto figura nga pas me proper positioning
     figures.forEach((fig, index) => {
-        // Calculate staggered position based on index
         const topPos = 20 + (20 * index);
         const leftPos = 10 + (5 * index);
         const rotations = [-5, 3, -2, 4, -1];
         const rotation = rotations[index % rotations.length];
         const scale = 0.8 + (0.05 * index);
-        
-        // Apply calculated styles
         $(fig).css({
             'top': `${topPos}px`,
             'left': `${leftPos}%`,
@@ -2398,20 +2272,18 @@ function sortPhotosByYear() {
         container.append(fig);
     });
 
-    // Reset carousel animation
+    // Reseto carousel animation
     $('.polaroid-figure').removeClass("current prev next");
     $('.polaroid-figure').addClass("next").first().removeClass("next").addClass("current");
     clearInterval(window.polaroidInterval);
     startPolaroidCarousel();
 }
 
-
-// Function to show timeline
+// Funksion për të treguar timeline-in
 function showTimeline() {
     if (!currentLocation || !currentLocation.timelineImages) return;
     showPolaroidGallery(currentLocation);
-}                                           
-
+}
 // Flag to check if the submit listener is already added
 let formSubmitListenerAdded = false;
 document.getElementById('uploadInput').addEventListener('change', function (e) {
@@ -2546,74 +2418,33 @@ document.getElementById('uploadInput').addEventListener('change', function (e) {
         }
     }
 });
-
 // Mbyllja e formës dhe rikthimi i timeline-it
 document.getElementById('closeFormBtn').addEventListener('click', function() {
     document.getElementById('formOverlay').style.display = 'none';
 });
-
-
-
 async function getPhotosFromBackend(location){
-
-
-
 try {
-
       const response = await fetch(`http://localhost:8000/api/v1/photos/${location}`);
-
       if (!response.ok) {
-
           throw new Error('Failed to fetch photos');
-
       }
-
-
-
       const responseData = await response.json();
-
       const photos = responseData.data;
-
-
-
       return photos;
-
-    
-
   } catch (error) {
-
       console.error('Error loading photos:', error);
-
   }
-
 }
-
-
 
 async function loadPhotos(location) {
-
 const photos = await getPhotosFromBackend(location);
-
 for (const photo of photos) {
-
     await renderPhoto(photo);
-
 }
-
 }
-
-
-
 async function renderPhoto(photo) {
-
   const { url, year, description, name } = photo; 
-
-
-
-  // Create temporary figure for measurement
-
   const tempFigure = document.createElement('figure');
-
   tempFigure.style.visibility = 'hidden';
 
   tempFigure.innerHTML = `
@@ -2635,84 +2466,44 @@ async function renderPhoto(photo) {
   `;
 
   document.getElementById('polaroidContent').appendChild(tempFigure);
-
-
-
-  // Wait for rendering
-
   await new Promise(resolve => requestAnimationFrame(resolve));
-
-
-
-  // Get natural stacking position
+  // Merret një pozicion natyral grumbullimi
 
   const newIndex = [...document.querySelectorAll('.polaroid-figure')]
-
       .findIndex(fig => fig === tempFigure);
-
-
-
-  // Remove temporary figure
-
   tempFigure.remove();
 
-
-
-  // Create final figure with calculated position
-
   const figure = document.createElement('figure');
-
   figure.className = 'polaroid-figure';
-  
-
-
   const topPos = 20 + (20 * newIndex);
-
   const leftPos = 10 + (5 * newIndex);
-
   const rotations = [-5, 3, -2, 4, -1];
-
   const rotation = rotations[newIndex % rotations.length];
-
   const scale = 0.8 + (0.05 * newIndex);
 
-
-
   Object.assign(figure.style, {
-
       top: `${topPos}px`,
-
       left: `${leftPos}%`,
-
       transform: `rotate(${rotation}deg) scale(${scale})`,
-
       zIndex: newIndex,
-
       position: 'absolute',
-
       transition: 'all 0.5s ease-in-out'
-
   });
-
-
-
   document.getElementById('polaroidContent').appendChild(figure);
-
   sortPhotosByNewest();
-
 }
 function sortPhotosByNewest() {
     const container = $('#polaroidContent');
     const figures = $('.polaroid-figure').get();
     
-    // Sort figures by year in descending order (newest to oldest)
+    // Renditni shifrat sipas vitit në rend zbritës (nga më e reja tek më e vjetra)
     figures.sort((a, b) => {
         const yearA = parseInt($(a).find('.year').text()) || 0;
         const yearB = parseInt($(b).find('.year').text()) || 0;
         return yearB - yearA; // DESCENDING
     });
 
-    // Clear container and re-append sorted figures
+    // Fshij container dhe ri-shto figurat e renditura
     container.empty();
     
     figures.forEach((fig, index) => {
@@ -2732,26 +2523,24 @@ function sortPhotosByNewest() {
         container.append(fig);
     });
 
-    // Reset carousel animation
+    // Reseto carousel animation
     $('.polaroid-figure').removeClass("current prev next");
     $('.polaroid-figure').addClass("next").first().removeClass("next").addClass("current");
     clearInterval(window.polaroidInterval);
     startPolaroidCarousel();
 }fileInput.addEventListener('change', function(e) {
-    selectedFile = e.target.files[0];
 
+    selectedFile = e.target.files[0];
     imageUploadForm.style.display = 'block';
     imageUploadForm.style.zIndex = 100;
-    imageUploadForm.style.position = 'absolute'; // Important for z-index
-
-    timeline.classList.add('blocked');  // This disables interaction
+    imageUploadForm.style.position = 'absolute';
+    timeline.classList.add('blocked');  // Kjo çaktivizon ndërveprimin
     timeline.style.zIndex = 1;
 });
+
 timeline.classList.remove('blocked');
 imageUploadForm.style.display = 'none';
 selectedFile = null;
-
-
   </script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/script.js"></script>
@@ -2785,144 +2574,26 @@ selectedFile = null;
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
-    var swiper = new Swiper(".clients-slider", {
-        loop: true,  // Lëvizje pafund
+      var swiper = new Swiper(".clients-slider", {
+        loop: true,
         autoplay: {
             delay: 0,  // Lëvizje e vazhdueshme
             disableOnInteraction: false,  // Lëvizja vazhdon edhe pas ndërveprimit
         },
         speed: 2000,  // Shpejtësia e lëvizjes (më e ngadalshme - 8 sekonda për një cikël)
-        slidesPerView: "auto",  // Imazhet përshtaten sipas madhësisë
+        slidesPerView: "auto", 
         spaceBetween: 30,  // Distancë mes imazheve
         centeredSlides: true,  // Lëvizja fillon nga e majta
         allowTouchMove: false,  // Nuk lejohet ndërveprimi manual
     });
 </script>
-
-<!-- CSS për stilizim -->
-<style>
-    .clients {
-        padding: 20px 0;
-        background: #f9f9f9;
-        overflow: hidden;
-    }
-
-    .clients-slider {
-        display: flex;
-        width: 100%;
-        margin: auto;
-        white-space: nowrap;
-    }
-
-    .clients-slider img {
-        height: 60px;  /* Mund ta ndryshosh për madhësi më të madhe */
-        width: auto;
-        object-fit: contain;
-        transition: 0.3s ease;
-        padding: 5px; /* Hapësirë rreth imazheve */
-        margin: 0 20px; /* Distancë mes imazheve */
-    }
-
-    .clients-slider img:hover {
-        transform: scale(1.05);
-    }
-
-    .swiper-slide {
-        width: auto !important;
-        display: flex;
-        align-items: center;
-        justify-content: left;
-    }
-
-
-    #timelineContainer {
-    position: relative;
-}
-
-#timeline {
-    /* Timeline styles */
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    position: relative;
-    z-index: 1;  /* Timeline është pas formës */
-}
-#timeline.blocked {
-    pointer-events: none;         /* Disables interaction */
-    animation-play-state: paused; /* Pauses CSS animation */
-    filter: grayscale(100%);      /* Optional: visual effect */
-    opacity: 0.4;                 /* Optional: fade to show it's inactive */
-}
-#timeline.blocked {
-    overflow: hidden;    /* Stops scrolling */
-}
-
-#imageUploadForm {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 400px;
-  max-width: 90%;
-}
-
-
-#formOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* dark semi-transparent background */
-  display: none; /* initially hidden */
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; /* very high to stay on top */
-}
-
-#formContainer {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-#formContainer input,
-#formContainer button {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    font-size: 16px;
-}
-
-#closeFormBtn {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 4px;
-}
-
-#closeFormBtn:hover {
-    background-color: #d32f2f;
-}
-
-
-
-</style>
-
-
-
-
 <!-- product section links -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
 
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
-<!-- custom js file link  -->
+<!-- js file link  -->
 <script src="js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
