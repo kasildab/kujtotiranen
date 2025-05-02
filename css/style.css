@@ -896,21 +896,6 @@ h3 {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 1200px) {
   .header {
     padding: 2rem;
@@ -1969,3 +1954,221 @@ display: -webkit-box;
         align-items: center;
         justify-content: left;
     }
+
+
+    .clients {
+      padding: 20px 0;
+      background: #f9f9f9;
+      overflow: hidden;
+  }
+
+  .clients-slider {
+      display: flex;
+      width: 100%;
+      margin: auto;
+      white-space: nowrap;
+  }
+
+  .clients-slider img {
+      height: 60px;  /* Mund ta ndryshosh për madhësi më të madhe */
+      width: auto;
+      object-fit: contain;
+      transition: 0.3s ease;
+      padding: 5px; /* Hapësirë rreth imazheve */
+      margin: 0 20px; /* Distancë mes imazheve */
+  }
+
+  .clients-slider img:hover {
+      transform: scale(1.05);
+  }
+
+  .swiper-slide {
+      width: auto !important;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+  }
+  
+
+
+
+  #timelineContainer {
+
+  position: relative;
+
+}
+
+
+
+#timeline {
+
+  /* Timeline styles */
+
+  padding: 20px;
+
+  background-color: #f4f4f4;
+
+  border-radius: 8px;
+
+  position: relative;
+
+  z-index: 1;  /* Timeline është pas formës */
+
+}
+
+#timeline.blocked {
+
+  pointer-events: none;         /* Disables interaction */
+
+  animation-play-state: paused; /* Pauses CSS animation */
+
+  filter: grayscale(100%);      /* Optional: visual effect */
+
+  opacity: 0.4;                 /* Optional: fade to show it's inactive */
+
+}
+
+#timeline.blocked {
+
+  overflow: hidden;    /* Stops scrolling */
+
+}
+
+
+
+#imageUploadForm {
+
+background: white;
+
+padding: 20px;
+
+border-radius: 10px;
+
+width: 400px;
+
+max-width: 90%;
+
+}
+
+
+
+
+
+#formOverlay {
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+background: rgba(0, 0, 0, 0.6); /* dark semi-transparent background */
+
+display: none; /* initially hidden */
+
+justify-content: center;
+
+align-items: center;
+
+z-index: 9999; /* very high to stay on top */
+
+}
+
+
+
+#formContainer {
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 8px;
+
+  width: 300px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+#formContainer input,
+
+#formContainer button {
+
+  width: 100%;
+
+  margin: 10px 0;
+
+  padding: 10px;
+
+  font-size: 16px;
+
+}
+
+
+
+#closeFormBtn {
+
+  background-color: #f44336;
+
+  color: white;
+
+  border: none;
+
+  cursor: pointer;
+
+  padding: 10px;
+
+  font-size: 16px;
+
+  border-radius: 4px;
+
+}
+
+
+
+#closeFormBtn:hover {
+
+  background-color: #d32f2f;
+
+}
+
+button[type="submit"] {
+
+  background-color: red; /* Ngjyrë e kuqe */
+
+  color: white; /* Ngjyrë e bardhë për tekstin */
+
+  border: none; /* Pa kufi */
+
+  padding: 10px 20px; /* Hapësirë rreth tekstit */
+
+  font-size: 16px; /* Madhësia e tekstit */
+
+  cursor: pointer; /* Shfaq dorën kur kalon mbi butonin */
+
+  border-radius: 5px; /* Rrugëzimi i këndeve */
+
+  transition: background-color 0.3s ease; /* Efekt kalimi */
+
+}
+
+Merge change
+
+
+Merge change
+
+
+
+/* Ndrysho ngjyrën kur kalon mbi butonin */
+
+button[type="submit"]:hover {
+
+  background-color: darkred; /* Ngjyrë më e errët kur kalon mbi butonin */
+
+}

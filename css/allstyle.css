@@ -616,3 +616,34 @@ textarea{
         padding: 10px 20px 50px 20px;
     }
 }
+
+button[type="submit"] {
+
+    background-color: red; /* Ngjyrë e kuqe */
+
+    color: white; /* Ngjyrë e bardhë për tekstin */
+
+    border: none; /* Pa kufi */
+
+    padding: 10px 20px; /* Hapësirë rreth tekstit */
+
+    font-size: 18px; /* Madhësia e tekstit */
+
+    cursor: pointer; /* Shfaq dorën kur kalon mbi butonin */
+
+    border-radius: 5px; /* Rrugëzimi i këndeve */
+
+    transition: background-color 0.3s ease; /* Efekt kalimi */
+
+}
+
+
+
+/* Ndrysho ngjyrën kur kalon mbi butonin */
+
+button[type="submit"]:hover {
+
+    background-color: darkred; /* Ngjyrë më e errët kur kalon mbi butonin */
+
+}
+
