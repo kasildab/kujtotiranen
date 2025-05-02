@@ -1907,47 +1907,153 @@ legend.addTo(map);
 
     // Funksion për të shfaqur informacionin e destinacionit në shiritin anësor
     function showDestinationInfo(location) {
-      currentLocation = location;
-      const sidebar = document.getElementById('sidebar');
-      const sidebarContent = document.getElementById('sidebar-content');
-      if (currentHighlightedMarker) {
-        currentHighlightedMarker.setZIndexOffset(0);
-        currentHighlightedMarker = null;
-      }
-      if (currentHighlightedPolyline) {
-        map.removeLayer(currentHighlightedPolyline);
-        currentHighlightedPolyline = null;
-      }
-      const marker = markers.find(m => 
-        m.getLatLng().lat === location.lat && 
-        m.getLatLng().lng === location.lng
-      );
-      if (marker) {
-        marker.setZIndexOffset(1000);
-        currentHighlightedMarker = marker;
-      }
-      
-      // Shfaq distance line
-      currentHighlightedPolyline = showDistanceLine(location.lat, location.lng);
-      sidebarContent.innerHTML = `
-        <div class="sidebar-header">
-          <h2 class="sidebar-title">${translations[currentLanguage][location.key + '_title']}</h2>
-          <button class="close-sidebar" onclick="hideSidebar()">&times;</button>
-        </div>
-        <img src="${location.image}" alt="${translations[currentLanguage][location.key + '_title']}" style="border: 1px solid #ddd; width: 100%;">
-        <p style="font-size: 16px; line-height: 1.6; color: #555; margin: 15px 0;">${translations[currentLanguage][location.key + '_info']}</p>
-        <div style="margin-top: 20px;">
-          <button style="font-size:16px; background-color: #007bff; color: white; border: none; padding: 10px 20px; margin-top: 10px; cursor: pointer; border-radius: 5px; width: 100%;" 
-                  onclick='showTimeline()'>
-            ${translations[currentLanguage]['time_capsule_view']}
-          </button>
-        </div>
-        <div class="distance-info" style="margin-top: 20px; font-size: 16px; color: #666;">
-          <strong>${translations[currentLanguage]['distance_info']}</strong> ${calculateDistanceToSkenderbej(location.lat, location.lng).toFixed(2)} ${translations[currentLanguage]['km']}
-        </div>
-      `;
-      sidebar.style.display = 'block';
-    }
+
+currentLocation = location;
+
+const sidebar = document.getElementById('sidebar');
+
+const sidebarContent = document.getElementById('sidebar-content');
+
+
+
+// Remove any existing highlight
+
+if (currentHighlightedMarker) {
+
+  currentHighlightedMarker.setZIndexOffset(0);
+
+  currentHighlightedMarker = null;
+
+}
+
+if (currentHighlightedPolyline) {
+
+  map.removeLayer(currentHighlightedPolyline);
+
+  currentHighlightedPolyline = null;
+
+}
+
+
+
+// Find and highlight the clicked marker
+
+const marker = markers.find(m =>
+
+  m.getLatLng().lat === location.lat &&
+
+  m.getLatLng().lng === location.lng
+
+);
+
+
+
+if (marker) {
+
+  marker.setZIndexOffset(1000);
+
+  currentHighlightedMarker = marker;
+
+}
+
+
+
+// Show distance line
+
+currentHighlightedPolyline = showDistanceLine(location.lat, location.lng);
+
+
+
+// Split info into two parts (manually or based on a separator)
+
+const fullText = translations[currentLanguage][location.key + '_info'];
+
+const splitIndex = fullText.indexOf(". "); // split after first sentence
+
+const shortText = fullText.substring(0, splitIndex + 1);
+
+const remainingText = fullText.substring(splitIndex + 1);
+
+
+
+// Populate sidebar content
+
+sidebarContent.innerHTML = `
+
+  <div class="sidebar-header">
+
+    <h2 class="sidebar-title">${translations[currentLanguage][location.key + '_title']}</h2>
+
+    <button class="close-sidebar" onclick="hideSidebar()">&times;</button>
+
+  </div>
+
+  <img src="${location.image}" alt="${translations[currentLanguage][location.key + '_title']}" style="border: 1px solid #ddd; width: 100%;">
+
+<p style="font-size: 16px; line-height: 1.6; color: #555; margin: 15px 0;">
+
+${shortText}
+
+<span id="more-text" style="display: none;">${remainingText}</span>
+
+<button id="toggle-text-btn" onclick="toggleReadMore()" 
+
+        style="background: none; border: none; color: #007bff; cursor: pointer; padding: 0; font-size: 16px;">Read More</button>
+
+</p>
+
+
+
+  <div style="margin-top: 20px;">
+
+    <button style="font-size:16px; background-color: #007bff; color: white; border: none; padding: 10px 20px; margin-top: 10px; cursor: pointer; border-radius: 5px; width: 100%;" 
+            onclick='showTimeline()'>
+
+      ${translations[currentLanguage]['time_capsule_view']}
+
+    </button>
+
+  </div>
+
+  <div class="distance-info" style="margin-top: 20px; font-size: 16px; color: #666;">
+
+    <strong>${translations[currentLanguage]['distance_info']}</strong> ${calculateDistanceToSkenderbej(location.lat, location.lng).toFixed(2)} ${translations[currentLanguage]['km']}
+
+  </div>
+
+`;
+
+
+
+// Show the sidebar
+
+sidebar.style.display = 'block';
+
+}
+
+function toggleReadMore() {
+
+const moreText = document.getElementById('more-text');
+
+const btn = document.getElementById('toggle-text-btn');
+
+
+
+if (moreText.style.display === 'none') {
+
+  moreText.style.display = 'inline';
+
+  btn.textContent = 'Read Less';
+
+} else {
+
+  moreText.style.display = 'none';
+
+  btn.textContent = 'Read More';
+
+}
+
+}
     function hideTimeline() {
       document.getElementById('timelineContainer').style.display = 'none';
     }
